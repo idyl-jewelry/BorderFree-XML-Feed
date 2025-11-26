@@ -40,8 +40,7 @@ function buildXml(feed) {
   const channelOpen = `<channel>
   <title>${escapeXml(shop.name)}</title>
   <link>${escapeXml(shop.url)}</link>
-  <description>${escapeXml(shop.description || shop.name)}</description>
-  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`;
+  <description>${escapeXml(shop.description || shop.name)}</description>`;
 
   const channelClose = `</channel>`;
 
@@ -49,9 +48,9 @@ function buildXml(feed) {
     .map((item) => {
       return `  <item>
     <g:id>${escapeXml(item.id)}</g:id>
-    <title><![CDATA[${item.title}]]></title>
-    <description><![CDATA[${item.description || ""}]]></description>
-    <link>${escapeXml(item.link)}</link>
+    <g:title><![CDATA[${item.title}]]></g:title>
+    <g:description><![CDATA[${item.description || ""}]]></g:description>
+    <g:link>${escapeXml(item.link)}</g:link>
     <g:image_link>${escapeXml(item.image_link)}</g:image_link>
     <g:availability>${escapeXml(item.availability)}</g:availability>
     <g:price>${escapeXml(item.price.amount)} ${escapeXml(
