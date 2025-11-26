@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 
-const SHOPIFY_FEED_URL = "https://idyl-stg-sp.myshopify.com/pages/borderfree-feed"; // your page
+const SHOPIFY_FEED_URL = "https://idyl.com/pages/borderfree-xml-feed"; // your page
 const OUTPUT_FILE = path.join(process.cwd(), "feed.xml");
 
 function extractBorderfreeFeed(html) {
