@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-<items>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
 <channel>
   <title>idyl</title>
   <link>https://idyl.com</link>
   <description>idyl | Fine diamond jewelry for everyday wear. Modular jewelry collection: Mix &amp; match your diamonds. Fueled by transparency: Sustainable lab-grown diamonds &amp; Conflict-free Solid gold. Free shipping &amp; returns.</description>
-  <lastBuildDate>Wed, 26 Nov 2025 13:32:34 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 26 Nov 2025 13:41:35 GMT</lastBuildDate>
   <item>
     <g:id>642d3877e591d</g:id>
     <title><![CDATA[Ada - Yellow Gold]]></title>
@@ -199,5 +198,4 @@ Each diamond is hand-selected from the finest 1% of Lab-Grown Diamonds and lovin
     <g:price>1195 USD</g:price>
   </item>
 </channel>
-</items>
 </rss>
