@@ -1,0 +1,10 @@
+{
+  "name": "borderfree-feed",
+  "type": "module",
+  "scripts": {
+    "build:feed": "node scripts/build-feed.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
