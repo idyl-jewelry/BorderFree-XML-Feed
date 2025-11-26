@@ -1,5 +1,9 @@
 name: Build Borderfree Feed
 
+# 🔑 Give the GITHUB_TOKEN write access so it can push feed.xml
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main ]
@@ -10,6 +14,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    # (optional) you can also set it here instead of top-level:
+    # permissions:
+    #   contents: write
 
     steps:
       - name: Checkout repo
