@@ -34,7 +34,7 @@ function buildXml(feed) {
   const { shop, items } = feed;
 
   const header = `<?xml version="1.0" encoding="UTF-8"?>`;
-  const openRss = `<rss version="2.0">`;
+  const openRss = `<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">`;
   const closeRss = `</rss>`;
 
   const channelOpen = `<channel>
@@ -64,11 +64,9 @@ function buildXml(feed) {
   return [
     header,
     openRss,
-    "<items>", // or <channel>…depending on Global-e spec
     channelOpen,
     itemXml,
     channelClose,
-    "</items>",
     closeRss,
   ].join("\n");
 }
