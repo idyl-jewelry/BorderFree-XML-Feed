@@ -56,6 +56,9 @@ function buildXml(feed) {
     <g:price>${escapeXml(item.price.amount)} ${escapeXml(
         item.price.currency
       )}</g:price>
+        <g:sale_price>${escapeXml(item.price.amount)} ${escapeXml(
+        item.price.currency
+      )}</g:sale_price>
   </item>`;
     })
     .join("\n");
