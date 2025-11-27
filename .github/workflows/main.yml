@@ -1,6 +1,4 @@
 name: Build Borderfree Feed
-
-# 🔑 Give the GITHUB_TOKEN write access so it can push feed.xml
 permissions:
   contents: write
 
@@ -9,15 +7,11 @@ on:
     branches: [ main ]
   workflow_dispatch: {}
   schedule:
-    - cron: "0 */6 * * *" # every 6 hours (optional)
+    - cron: "0 0 * * *" # every 24 hours (midnight UTC)
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    # (optional) you can also set it here instead of top-level:
-    # permissions:
-    #   contents: write
 
     steps:
       - name: Checkout repo

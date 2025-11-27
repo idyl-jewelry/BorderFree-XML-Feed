@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 
-const SHOPIFY_FEED_URL = "https://idyl.com/pages/borderfree-xml-feed"; // your page
+const SHOPIFY_FEED_URL = "https://idyl.com/pages/borderfree-xml-feed";
 const OUTPUT_FILE = path.join(process.cwd(), "feed.xml");
 
 function extractBorderfreeFeed(html) {
@@ -13,10 +13,6 @@ function extractBorderfreeFeed(html) {
   }
 
   const jsonString = match[1];
-
-  // JSON inside HTML may have escaped slashes etc – but it’s a valid JS object literal
-  // Safest is to "eval" in a sandboxed way:
-  // eslint-disable-next-line no-new-func
   const obj = Function(`"use strict"; return (${jsonString});`)();
   return obj;
 }
@@ -74,7 +70,6 @@ function buildXml(feed) {
 }
 
 async function main() {
-  console.log("Fetching Shopify feed page…", SHOPIFY_FEED_URL);
   const res = await fetch(SHOPIFY_FEED_URL);
   if (!res.ok) {
     throw new Error(`Failed to fetch Shopify page: ${res.status}`);
@@ -82,12 +77,9 @@ async function main() {
 
   const html = await res.text();
   const feed = extractBorderfreeFeed(html);
-
-  console.log(`Found ${feed.items.length} items, building XML…`);
   const xml = buildXml(feed);
 
   fs.writeFileSync(OUTPUT_FILE, xml, "utf8");
-  console.log(`Wrote ${OUTPUT_FILE}`);
 }
 
 main().catch((err) => {
